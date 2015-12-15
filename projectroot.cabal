@@ -24,4 +24,5 @@ library
                      , ./projectroot/deps/commander/commander.c
   install-includes:    ./projectroot/libprojectroot.h
                      , ./projectroot/deps/commander/commander.h
+  cc-options:          -std=c99
   include-dirs:        .
