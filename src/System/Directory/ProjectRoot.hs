@@ -1,6 +1,14 @@
 -- |
+-- Module: System.Directory.ProjectRoot
+-- Description: Find the root of a project
+-- Copyright: (c) Pedro Tacla Yamada, 2015
+-- License: MIT
+-- Maintainer: tacla.yamada@gmail.com
+-- Stability: Stable
+-- Portability: POSIX
+--
 -- Simple way of finding the root of a project given an entry-point.
--- This module provides bindings to the @projectroot@ C library
+-- This module provides bindings to the <https://github.com/yamadapc/projectroot projectroot> C library
 module System.Directory.ProjectRoot
   where
 
