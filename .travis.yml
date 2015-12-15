@@ -1,1 +1,4 @@
 language: haskell
+before_script:
+  - git submodule init
+  - git submodule update
