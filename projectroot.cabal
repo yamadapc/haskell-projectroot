@@ -1,5 +1,5 @@
 name:                projectroot
-version:             0.1.0.1
+version:             0.2.0.0
 synopsis:            Bindings to the projectroot C logic
 description: Simple way of finding the root of a project given an
              entry-point. This module provides bindings to the
