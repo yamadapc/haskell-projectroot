@@ -12,31 +12,38 @@
 module System.Directory.ProjectRoot
   where
 
-import           Control.Monad    ((<=<), (>=>))
-import           Foreign.C
+import           Foreign.C        (CString, newCString, peekCString)
+import           Foreign.Ptr      (nullPtr)
 import           System.Directory (getCurrentDirectory)
 
 -- * Haskell Wrappers
 
 -- |
 -- Find the project root given an entry point
-getProjectRoot :: FilePath -> IO FilePath
-getProjectRoot = (find_project_root <=< newCString) >=> peekCString
+getProjectRoot :: FilePath -> IO (Maybe FilePath)
+getProjectRoot fp = do
+    root <- find_project_root =<< newCString fp
+    if root == nullPtr
+        then return Nothing
+        else Just <$> peekCString root
 
 -- |
 -- Find the weighted project root given an entry point
-getProjectRootWeighted :: FilePath -> IO FilePath
-getProjectRootWeighted = (find_project_root_weighted <=< newCString) >=>
-                         peekCString
+getProjectRootWeighted :: FilePath -> IO (Maybe FilePath)
+getProjectRootWeighted fp = do
+    root <- find_project_root_weighted =<< newCString fp
+    if root == nullPtr
+        then return Nothing
+        else Just <$> peekCString root
 
 -- |
 -- Find the project root of the current directory
-getProjectRootCurrent :: IO FilePath
+getProjectRootCurrent :: IO (Maybe FilePath)
 getProjectRootCurrent = getCurrentDirectory >>= getProjectRoot
 
 -- |
 -- Find the weighted project root of the current directory
-getProjectRootWeightedCurrent :: IO FilePath
+getProjectRootWeightedCurrent :: IO (Maybe FilePath)
 getProjectRootWeightedCurrent = getCurrentDirectory >>= getProjectRootWeighted
 
 -- * C functions

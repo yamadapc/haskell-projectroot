@@ -26,3 +26,13 @@ library
                      , ./projectroot/deps/commander/commander.h
   cc-options:          -std=c99
   include-dirs:        .
+
+test-suite hspec
+  main-is: Spec.hs
+  type: exitcode-stdio-1.0
+  build-depends: base
+               , hspec
+               , QuickCheck
+               , projectroot
+  hs-source-dirs: test
+  default-language: Haskell2010
