@@ -1,4 +1,6 @@
 # haskell-projectroot
+[![Build Status](https://travis-ci.org/yamadapc/haskell-projectroot.svg?branch=master)](https://travis-ci.org/yamadapc/haskell-projectroot)
+- - -
 Bindings to the projectroot C logic
 
 ## Installing
