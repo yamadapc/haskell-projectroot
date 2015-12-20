@@ -4,7 +4,7 @@ synopsis:            Bindings to the projectroot C logic
 description: Simple way of finding the root of a project given an
              entry-point. This module provides bindings to the
              <https://github.com/yamadapc/projectroot projectroot> C library
-homepage:            https://gitlab.com/yamadapc/haskell-projectroot
+homepage:            https://github.com/yamadapc/haskell-projectroot
 license:             MIT
 license-file:        LICENSE
 author:              Pedro Tacla Yamada
@@ -14,6 +14,10 @@ category:            System
 build-type:          Simple
 cabal-version:       >=1.10
 tested-with: GHC >= 7.6
+
+source-repository head
+  type:     git
+  location: git://github.com/yamadapc/haskell-projectroot
 
 library
   exposed-modules:     System.Directory.ProjectRoot
