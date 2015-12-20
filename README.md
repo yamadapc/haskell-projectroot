@@ -12,7 +12,6 @@ With stack:
 $ stack install projectroot
 ```
 
-
 ## Documentation
 See the haddock documentation on Hackage.
 
