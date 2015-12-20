@@ -12,9 +12,10 @@
 module System.Directory.ProjectRoot
   where
 
-import           Foreign.C        (CString, newCString, peekCString)
-import           Foreign.Ptr      (nullPtr)
-import           System.Directory (getCurrentDirectory)
+import           Control.Applicative ((<$>))
+import           Foreign.C           (CString, newCString, peekCString)
+import           Foreign.Ptr         (nullPtr)
+import           System.Directory    (getCurrentDirectory)
 
 -- * Haskell Wrappers
 
